@@ -1,7 +1,7 @@
 platform=mac
-host=Pauls-MacBook-Air-2
+host=Pauls-MacBook-Pro-279
 user=
-uuid=09D3C8D9-D823-483E-8FBC-A88EF28EA9A5
+uuid=ABCDA787-3035-4A77-90C9-360E331E3B04
 app=Scrivener
-project_path=/Users/paultarvydas/quicklisp/local-projects/arrowgrams/doc/overview.scriv
+project_path=/Users/tarvydas/quicklisp/local-projects/arrowgrams/doc/overview.scriv
 app_path=/Applications/Scrivener.app

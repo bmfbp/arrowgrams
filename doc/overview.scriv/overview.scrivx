@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Identifier="165BCA29-DCDA-4E65-BC17-3755887AD5A3" Version="2.0" Creator="SCRMAC-3.2.1-14482" Device="Pauls-MacBook-Air-2" Author="" Modified="2020-12-16 22:06:11 -0500" ModID="23AF2B84-1199-490D-B318-57C1CA68B4D6">
+<ScrivenerProject Identifier="165BCA29-DCDA-4E65-BC17-3755887AD5A3" Version="2.0" Creator="SCRMAC-3.2.1-14482" Device="Pauls-MacBook-Pro-279" Author="" Modified="2020-12-16 23:55:02 -0500" ModID="A5097217-640A-49D7-98B9-5FA830FCD8B4">
     <Binder>
         <BinderItem UUID="957D7114-6346-4F8C-8508-DC4A9F2A26A8" Type="DraftFolder" Created="2020-12-16 18:55:51 -0500" Modified="2020-12-16 18:55:51 -0500">
             <Title>Draft</Title>
@@ -81,7 +81,7 @@
                         <IncludeInCompile>Yes</IncludeInCompile>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>695,0</TextSelection>
+                        <TextSelection>0,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
             </Children>
@@ -169,7 +169,7 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2020-12-16 18:55:47 -0500" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" NextResetDate="2020-12-17 00:00:00 -0500" ResetType="Time" ResetTime="00:00" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
-        <PreviousSession Words="283" Characters="1584" Date="2020-12-16 18:55:47 -0500"/>
+        <PreviousSession Words="283" Characters="1584" Date="2020-12-16 23:53:50 -0500"/>
     </ProjectTargets>
     <RecentWritingHistory Date="2020-12-16 18:55:47 -0500">
         <DraftWordCount>283</DraftWordCount>

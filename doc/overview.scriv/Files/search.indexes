@@ -1,4 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SearchIndexes Version="1.0">
-    <Documents/>
+    <Documents>
+        <Document ID="88A46363-54A9-416D-9F36-EF751FBB21A9">
+            <Title>Events</Title>
+            <Text>An event is a piece of tagged data.
+
+The tags are called pins.
+
+For example, in JS, an event is just a JS Object {pin: “…”, data: …}.  For now, pins are always strings, and data is any kind of thing that can be converted to JSON.
+
+</Text>
+        </Document>
+        <Document ID="80961BC9-54BA-407B-B8CC-994732DCC960">
+            <Title>Schematic</Title>
+        </Document>
+        <Document ID="52C05D82-7939-4715-8B76-46C2DFB69D84">
+            <Title>Wires</Title>
+            <Text>A wire is a routing path from a sender to a list of receivers.
+
+For example, in JS, a wire could be implemented as:
+  { sender: {part, pin}, receivers: [ {part,pin}, {part,pin}, … ]]
+</Text>
+        </Document>
+        <Document ID="3C3E530A-A50C-48C1-8A6F-66C7CA492D60">
+            <Title>Command-line Tools</Title>
+            <Text>There are two basic command line   tools:
+	1)	SVG to JSON transpiler
+	2)	Runtime.
+
+1) The SVG to JSON transpiler is a black box that has one input and one output
+	•	input: name (path) of SVG file
+	•	output: name (path) of JSON result.
+
+2) The runtime is a black box that has two inputs and no outputs (it might produce console output as a side-effect).  The inputs are
+	•	input: name (path) of a JSON file (the net)
+	•	input: name (path) of a directory containing assets.  Assets are black-box parts.  At first, we will keep assets in directories depending on implementation language, e.g. a directory of JS assets, a directory of CL assets, etc.
+
+The runtime will be built in JS and it will use JS assets and JSON.
+
+#
+</Text>
+        </Document>
+        <Document ID="D1C85488-7E3F-4114-B47D-E7DB66D78C1C">
+            <Title>runner</Title>
+        </Document>
+        <Document ID="63B94CF2-87FB-455C-8C63-067745776BC8">
+            <Title>Nets</Title>
+            <Text>A net is a list of wires.
+
+For example, in JS, a net could be implemented as an array of wires:
+
+[
+  { sender: {part, pin}, receivers: [ {part,pin}, {part,pin}, … ]],
+  { sender: {part, pin}, receivers: [ {part,pin}, {part,pin}, … ]],
+  …
+]</Text>
+        </Document>
+        <Document ID="8A1D536C-5472-48BE-B2C8-27037BBEBA65">
+            <Title>Goals</Title>
+            <Text>Goals:
+
+Plug software parts together like LEGO® components.
+
+</Text>
+        </Document>
+        <Document ID="168A1F1E-AC59-4736-ADF8-A4B7CB3D1ACB">
+            <Title>Parts</Title>
+            <Text>A part is a black box.
+
+A part has
+	•	A name - its kind.
+	•	A set of input pins
+	•	A set of output pins.
+
+Parts are connected to other parts via wires.
+
+Wires carry events.
+
+A part can be created using:
+	•	Code (called a leaf part)
+	•	Schematic - contains wires and parts, but schematics do not contain code.  The parts inside a schematic are black boxes - no one knows (or cares) if the contained parts are leaves or other schematics.
+</Text>
+        </Document>
+        <Document ID="4BACEC24-BB26-4A85-854B-9DC98CB77D3F">
+            <Title>Leaf</Title>
+        </Document>
+    </Documents>
 </SearchIndexes>

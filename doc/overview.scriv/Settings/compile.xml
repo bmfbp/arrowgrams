@@ -3,6 +3,7 @@
     <ProjectSettings>
         <Content Scope="Included">
             <Filter State="Off" Exclude="No" Type="Label">
+                <CollectionID>50E3FBB4-7BC7-476A-893C-FE9C3F61689A</CollectionID>
                 <Label>-1</Label>
                 <Status>-1</Status>
             </Filter>
@@ -13,7 +14,7 @@
             <ResampleImages DPI="72">No</ResampleImages>
             <ConvertTablesAndListToMMD>Yes</ConvertTablesAndListToMMD>
             <PDF>
-                <Cover Bleed="9.0" BleedUnits="pt"/>
+                <Cover Source="FrontMatter" Bleed="9.0" BleedUnits="pt"/>
                 <Compression Enabled="No">
                     <ImageResolutionCompressionType>Set</ImageResolutionCompressionType>
                     <ImageResolution>150</ImageResolution>
@@ -42,9 +43,6 @@
         <MetaData>
             <ProjectTitle>overview</ProjectTitle>
             <ProjectAbbreviatedTitle>overview</ProjectAbbreviatedTitle>
-            <Authors>
-                <Author Role="aut"></Author>
-            </Authors>
             <EbookLanguage>en</EbookLanguage>
             <FountainTitlePageMetaData>
                 <Value Key="Title"><![CDATA[<$projecttitle>]]></Value>
@@ -56,14 +54,18 @@
             </MMDMetaData>
         </MetaData>
     </ProjectSettings>
-    <CurrentFileType>Print</CurrentFileType>
+    <CurrentFileType>html</CurrentFileType>
     <FormatSettings>
         <Format ID="DEFAULT">
             <SectionLayouts>
                 <Type ID="C2A6A3E0-A671-4575-984C-2E29CDE2CB39">NEW-PAGE-HEADER-WITH-TEXT</Type>
-                <Type ID="688D6CF1-7463-494E-9F63-7A9E701E7BDD">TEXT-SECTION</Type>
+                <Type ID="B13DC7FA-8EC6-4048-8B33-FF234C6CEB63">AS-IS</Type>
+                <Type ID="688D6CF1-7463-494E-9F63-7A9E701E7BDD">TEXT-WITH-HEADER</Type>
             </SectionLayouts>
         </Format>
     </FormatSettings>
-    <LastUsedFormats/>
+    <LastUsedFormats>
+        <Print>DEFAULT</Print>
+        <html>DEFAULT</html>
+    </LastUsedFormats>
 </CompileSettings>

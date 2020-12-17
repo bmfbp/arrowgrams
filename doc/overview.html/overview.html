@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>overview</title>
+  <meta name="CreationTime" content="2020-12-16T23:55:12Z">
+  <meta name="ModificationTime" content="2020-12-16T23:55:12Z">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 18.0px; font: 13.0px Palatino}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 18.0px; font: 13.0px Palatino; min-height: 18.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 18.0px; font: 15.0px Palatino}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 18.0px; font: 15.0px Palatino; min-height: 19.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Palatino}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Palatino; min-height: 18.0px}
+    li.li6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Palatino}
+    li.li7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Palatino; min-height: 18.0px}
+    span.s1 {text-decoration: underline}
+    ol.ol1 {list-style-type: decimal}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<div style="width: 600px; margin: 0 auto">
+
+<h2 style="margin: 24.0px 0.0px 12.0px 0.0px; font: 20.0px Helvetica"><b>Goals</b></h2>
+<p class="p2">Goals:</p>
+<p class="p3"><br></p>
+<p class="p4">Plug software <i>parts </i>together like LEGO® components.</p>
+<p class="p5"><br></p>
+<p class="p5"><br></p>
+<h2 style="margin: 24.0px 0.0px 12.0px 0.0px; font: 20.0px Helvetica"><b>Parts</b></h2>
+<p class="p2">A <i>part</i> is a black box.</p>
+<p class="p3"><br></p>
+<p class="p2">A <i>part </i>has</p>
+<ul class="ul1">
+  <li class="li6">A name - its <i>kind</i>.</li>
+  <li class="li6">A set of input pins</li>
+  <li class="li6">A set of output pins.</li>
+</ul>
+<p class="p7"><br></p>
+<p class="p6"><i>Parts</i> are connected to other <i>parts </i>via <i>wires.</i></p>
+<p class="p7"><br></p>
+<p class="p6"><i>Wires</i> carry <i>events</i>.</p>
+<p class="p7"><br></p>
+<p class="p6">A <i>part </i>can be created using:</p>
+<ul class="ul1">
+  <li class="li6">Code (called a <i>leaf part</i>)</li>
+  <li class="li6"><i>Schematic</i> - contains <i>wires</i> and <i>parts, </i>but <i>schematics </i>do not contain code.<span class="Apple-converted-space">  </span>The <i>parts inside </i>a <i>schematic </i>are black boxes - no one knows (or cares) if the contained <i>parts</i> are <i>leaves</i> or other <i>schematics</i>.</li>
+  <li class="li7"><br></li>
+</ul>
+<h2 style="margin: 24.0px 0.0px 12.0px 0.0px; font: 20.0px Helvetica"><b>Leaf</b></h2>
+<h2 style="margin: 24.0px 0.0px 12.0px 0.0px; font: 20.0px Helvetica"><b>Schematic</b></h2>
+<h2 style="margin: 24.0px 0.0px 12.0px 0.0px; font: 20.0px Helvetica"><b>Events</b></h2>
+<p class="p2">An <i>event</i> is a piece of tagged data.</p>
+<p class="p3"><br></p>
+<p class="p2">The tags are called <i>pins</i>.</p>
+<p class="p3"><br></p>
+<p class="p2">For example, in JS, an <i>event </i>is just a JS Object {pin: “…”, data: …}.<span class="Apple-converted-space">  </span>For now, pins are <i>always</i> strings, and <i>data</i> is any kind of thing that can be converted to JSON.</p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+<h2 style="margin: 24.0px 0.0px 12.0px 0.0px; font: 20.0px Helvetica"><b>Wires</b></h2>
+<p class="p2">A <i>wire </i>is a routing path from a sender to a list of receivers.</p>
+<p class="p3"><br></p>
+<p class="p2">For example, in JS, a <i>wire </i>could be implemented as:</p>
+<p class="p2"><span class="Apple-converted-space">  </span>{ sender: {part, pin}, receivers: [ {part,pin}, {part,pin}, … ]]</p>
+<p class="p3"><br></p>
+<h2 style="margin: 24.0px 0.0px 12.0px 0.0px; font: 20.0px Helvetica"><b>Nets</b></h2>
+<p class="p2">A<i> net </i>is a list of <i>wires.</i></p>
+<p class="p3"><br></p>
+<p class="p2">For example, in JS, a <i>net</i> could be implemented as an array of wires:</p>
+<p class="p3"><br></p>
+<p class="p2">[</p>
+<p class="p2"><span class="Apple-converted-space">  </span>{ sender: {part, pin}, receivers: [ {part,pin}, {part,pin}, … ]],</p>
+<p class="p2"><span class="Apple-converted-space">  </span>{ sender: {part, pin}, receivers: [ {part,pin}, {part,pin}, … ]],</p>
+<p class="p2"><span class="Apple-converted-space">  </span>…</p>
+<p class="p2">]</p>
+<h2 style="margin: 24.0px 0.0px 12.0px 0.0px; font: 20.0px Helvetica"><b>Command-line Tools</b></h2>
+<p class="p2">There are two basic command line <span class="Apple-converted-space">  </span>tools:</p>
+<ol class="ol1">
+  <li class="li6">SVG to JSON transpiler</li>
+  <li class="li6">Runtime.</li>
+</ol>
+<p class="p7"><br></p>
+<p class="p6">1) The SVG to JSON transpiler is a black box that has one input and one output</p>
+<ul class="ul1">
+  <li class="li6"><span class="s1">input</span>: name (path) of SVG file</li>
+  <li class="li6"><span class="s1">output</span>: name (path) of JSON result.</li>
+</ul>
+<p class="p7"><br></p>
+<p class="p6">2) The runtime is a black box that has two inputs and no outputs (it might produce console output as a side-effect).<span class="Apple-converted-space">  </span>The inputs are</p>
+<ul class="ul1">
+  <li class="li6"><span class="s1">input</span>: name (path) of a JSON file (the net)</li>
+  <li class="li6"><span class="s1">input</span>: name (path) of a directory containing assets.<span class="Apple-converted-space">  </span>Assets are black-box parts.<span class="Apple-converted-space">  </span>At first, we will keep assets in directories depending on implementation language, e.g. a directory of JS assets, a directory of CL assets, etc.</li>
+</ul>
+<p class="p7"><br></p>
+<p class="p6">The runtime will be built in JS and it will use JS assets and JSON.</p>
+<p class="p7"><br></p>
+<p class="p6"><img src="Images/runner.png" width="100%" alt="Image"></p>
+</div>
+</body>
+</html>
