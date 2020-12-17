@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-12-17 Thu 15:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Paul Tarvydas" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0752c3f">1. syntax overview</a></li>
+<li><a href="#org598d9f5">2. details</a>
+<ul>
+<li><a href="#org31df4a8">2.1. type id</a></li>
+<li><a href="#orgb8d0d11">2.2. self</a></li>
+<li><a href="#org89270dc">2.3. situation id</a></li>
+<li><a href="#orgc721bc5">2.4. kind id &#x2026; end kind</a></li>
+<li><a href="#org6d62347">2.5. when situation kind &#x2026; end when</a></li>
+<li><a href="#orgafa1a03">2.6. method id [( kinds )] [&gt;&gt; return-kind]</a></li>
+<li><a href="#orga4880c6">2.7. script id [( kinds )] [&gt;&gt; return-kind]</a></li>
+<li><a href="#orgf2bf5b9">2.8. script kind-id id [( names )] [&gt;&gt; return-kind]</a></li>
+<li><a href="#org241f2f5">2.9. statements</a></li>
+<li><a href="#org0891030">2.10. expressions</a></li>
+<li><a href="#orgf5f9062">2.11. symbols</a></li>
+<li><a href="#orgdfabd9e">2.12. comment</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0752c3f" class="outline-2">
+<h2 id="org0752c3f"><span class="section-number-2">1</span> syntax overview</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+type id
+</p>
+
+<p>
+self
+</p>
+
+<p>
+situation id
+</p>
+
+<p>
+kind id &#x2026; end kind
+</p>
+
+<p>
+when sitation kind &#x2026; end when
+</p>
+
+<p>
+method id [( kinds )] [&gt;&gt; return-kind]
+</p>
+
+<p>
+script id [( kinds )] [&gt;&gt; return-kind]
+</p>
+
+<p>
+script kind-id id [( names )] [&gt;&gt; return-kind]
+</p>
+
+<p>
+let &#x2026; in &#x2026; end let
+</p>
+
+<p>
+create &#x2026; in &#x2026; end create
+</p>
+
+<p>
+map &#x2026; end map
+</p>
+
+<p>
+set
+</p>
+
+<p>
+if &#x2026; then &#x2026; [else &#x2026;] end if
+</p>
+
+<p>
+loop &#x2026; end loop
+</p>
+
+<p>
+exit-when &#x2026;
+</p>
+
+<p>
+&gt;&gt; return statement
+</p>
+
+<p>
+@  call script
+</p>
+
+<p>
+call method
+</p>
+
+<p>
+[@] symbol [. symbol]* [( expression expression &#x2026; )]*
+</p>
+
+<p>
+% &#x2026;
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org598d9f5" class="outline-2">
+<h2 id="org598d9f5"><span class="section-number-2">2</span> details</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org31df4a8" class="outline-3">
+<h3 id="org31df4a8"><span class="section-number-3">2.1</span> type id</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+defines a handle for type
+</p>
+
+<p>
+builtin keywords true and false
+</p>
+</div>
+</div>
+<div id="outline-container-orgb8d0d11" class="outline-3">
+<h3 id="orgb8d0d11"><span class="section-number-3">2.2</span> self</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+can be a part-name in which case it is a keyword
+</p>
+</div>
+</div>
+<div id="outline-container-org89270dc" class="outline-3">
+<h3 id="org89270dc"><span class="section-number-3">2.3</span> situation id</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+defines time/phase during which methods and scripts apply
+</p>
+</div>
+</div>
+<div id="outline-container-orgc721bc5" class="outline-3">
+<h3 id="orgc721bc5"><span class="section-number-3">2.4</span> kind id &#x2026; end kind</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+defines field names for a "class"
+</p>
+
+<p>
+kinds are almost like OO classes, except they can have parts-lists and wiring defined at build time
+</p>
+
+<p>
+can contain a symbol, or 'map symbol'
+</p>
+
+<p>
+'map symbol' means a mappable collection of symbol
+</p>
+</div>
+</div>
+<div id="outline-container-org6d62347" class="outline-3">
+<h3 id="org6d62347"><span class="section-number-3">2.5</span> when situation kind &#x2026; end when</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+describe methods and scripts allowed for kind during phase denoted by situation
+</p>
+</div>
+</div>
+<div id="outline-container-orgafa1a03" class="outline-3">
+<h3 id="orgafa1a03"><span class="section-number-3">2.6</span> method id [( kinds )] [&gt;&gt; return-kind]</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+method declaration
+</p>
+
+<p>
+only allowed in situation definitions
+</p>
+
+<p>
+defines an external routine that applies to the kind given for the situation
+</p>
+
+<p>
+always has one formal - self (of kind given by enclosing kind (in when) definition)
+</p>
+
+<p>
+optional: other formals are specified by a list of kinds in parens, kinds can be preceded by 'map'
+</p>
+
+<p>
+optional: return kind can be given after &gt;&gt;, kind can be given as 'map kind'
+</p>
+</div>
+</div>
+<div id="outline-container-orga4880c6" class="outline-3">
+<h3 id="orga4880c6"><span class="section-number-3">2.7</span> script id [( kinds )] [&gt;&gt; return-kind]</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+script declaration
+same as method (above), except that the script must be specified in a script definition (below)
+</p>
+</div>
+</div>
+<div id="outline-container-orgf2bf5b9" class="outline-3">
+<h3 id="orgf2bf5b9"><span class="section-number-3">2.8</span> script kind-id id [( names )] [&gt;&gt; return-kind]</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+script definition
+</p>
+
+<p>
+there must be exactly one script definition for every script declaration
+</p>
+
+<p>
+optional: formals are names (kinds must match with script declaration (in when))
+</p>
+
+<p>
+optional: return-kind can be specified and must match script declaration (in when)
+</p>
+</div>
+</div>
+<div id="outline-container-org241f2f5" class="outline-3">
+<h3 id="org241f2f5"><span class="section-number-3">2.9</span> statements</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+let &#x2026; in &#x2026; end let
+</p>
+
+<p>
+create &#x2026; in &#x2026; end create
+</p>
+
+<p>
+map &#x2026; end map
+</p>
+
+<p>
+set
+</p>
+
+<p>
+if &#x2026; then &#x2026; [else &#x2026;] end if
+</p>
+
+<p>
+loop &#x2026; end loop
+</p>
+
+<p>
+exit-when &#x2026;
+</p>
+
+<p>
+&gt;&gt; return statement
+</p>
+
+<p>
+@  call script
+</p>
+
+<p>
+call method
+</p>
+</div>
+</div>
+<div id="outline-container-org0891030" class="outline-3">
+<h3 id="org0891030"><span class="section-number-3">2.10</span> expressions</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+[@] symbol [. symbol]** [( expression expression &#x2026; )]**
+</p>
+
+<p>
+actuals are space-separated (not comma-separated as in most languages)
+</p>
+</div>
+</div>
+<div id="outline-container-orgf5f9062" class="outline-3">
+<h3 id="orgf5f9062"><span class="section-number-3">2.11</span> symbols</h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+first char must be a-zA-Z 
+</p>
+
+<p>
+following chars may be a-z-A-Z0-9 or / or -
+</p>
+
+<p>
+final char can be a following char or ? or '
+</p>
+</div>
+</div>
+<div id="outline-container-orgdfabd9e" class="outline-3">
+<h3 id="orgdfabd9e"><span class="section-number-3">2.12</span> comment</h3>
+<div class="outline-text-3" id="text-2-12">
+<p>
+% to end of line
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Paul Tarvydas</p>
+<p class="date">Created: 2020-12-17 Thu 15:30</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
