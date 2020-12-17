@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-12-17 Thu 15:30 -->
+<!-- 2020-12-17 Thu 16:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -246,29 +246,189 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0752c3f">1. syntax overview</a></li>
-<li><a href="#org598d9f5">2. details</a>
+<li><a href="#orgce80ec7">1. Kernel is also called ESA</a></li>
+<li><a href="#orgc979ca1">2. Overview</a>
 <ul>
-<li><a href="#org31df4a8">2.1. type id</a></li>
-<li><a href="#orgb8d0d11">2.2. self</a></li>
-<li><a href="#org89270dc">2.3. situation id</a></li>
-<li><a href="#orgc721bc5">2.4. kind id &#x2026; end kind</a></li>
-<li><a href="#org6d62347">2.5. when situation kind &#x2026; end when</a></li>
-<li><a href="#orgafa1a03">2.6. method id [( kinds )] [&gt;&gt; return-kind]</a></li>
-<li><a href="#orga4880c6">2.7. script id [( kinds )] [&gt;&gt; return-kind]</a></li>
-<li><a href="#orgf2bf5b9">2.8. script kind-id id [( names )] [&gt;&gt; return-kind]</a></li>
-<li><a href="#org241f2f5">2.9. statements</a></li>
-<li><a href="#org0891030">2.10. expressions</a></li>
-<li><a href="#orgf5f9062">2.11. symbols</a></li>
-<li><a href="#orgdfabd9e">2.12. comment</a></li>
+<li><a href="#orgfe4e1af">2.1. Isolation</a></li>
+<li><a href="#org22d11e0">2.2. Pins</a></li>
+<li><a href="#orgac3926a">2.3. Queues</a></li>
+<li><a href="#orgc4ab808">2.4. Events</a></li>
+<li><a href="#orgd313b53">2.5. Send</a></li>
+</ul>
+</li>
+<li><a href="#org9a07a1e">3. SCL</a></li>
+<li><a href="#org7225855">4. Transpiler</a></li>
+<li><a href="#org1de1f02">5. syntax overview for pseudo-code SCL</a></li>
+<li><a href="#org75e7eac">6. details</a>
+<ul>
+<li><a href="#org979a1e1">6.1. type id</a></li>
+<li><a href="#org3bd88d1">6.2. self</a></li>
+<li><a href="#org8bfdc3a">6.3. situation id</a></li>
+<li><a href="#org0e38f30">6.4. kind id &#x2026; end kind</a></li>
+<li><a href="#orgfbf38de">6.5. when situation kind &#x2026; end when</a></li>
+<li><a href="#org2cea21c">6.6. method id [( kinds )] [&gt;&gt; return-kind]</a></li>
+<li><a href="#orgc5bb7d7">6.7. script id [( kinds )] [&gt;&gt; return-kind]</a></li>
+<li><a href="#orgbb62cbc">6.8. script kind-id id [( names )] [&gt;&gt; return-kind]</a></li>
+<li><a href="#orgc48808e">6.9. statements</a></li>
+<li><a href="#orgff03f46">6.10. expressions</a></li>
+<li><a href="#org5f65e07">6.11. symbols</a></li>
+<li><a href="#org9f1cbaf">6.12. comment</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0752c3f" class="outline-2">
-<h2 id="org0752c3f"><span class="section-number-2">1</span> syntax overview</h2>
+<div id="outline-container-orgce80ec7" class="outline-2">
+<h2 id="orgce80ec7"><span class="section-number-2">1</span> Kernel is also called ESA</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+ESA stands for Encapsulated Software Assets
+</p>
+
+<p>
+The kernel is written in pseudo-code, then transpiled to Common Lisp and JavaScript.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc979ca1" class="outline-2">
+<h2 id="orgc979ca1"><span class="section-number-2">2</span> Overview</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+An overview of Arrowgrams <i>parts</i> is needed to understand the intention of the Kernel.
+</p>
+</div>
+<div id="outline-container-orgfe4e1af" class="outline-3">
+<h3 id="orgfe4e1af"><span class="section-number-3">2.1</span> Isolation</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+(As of Dec. 2020, I prefer the word "isolated" instead of "encapsulated")
+</p>
+
+<p>
+The idea of isolation is that <b>nothing</b> leaks out - data, nor control-flow - and the <b>only</b> communication is messages via <b>Send()</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org22d11e0" class="outline-3">
+<h3 id="org22d11e0"><span class="section-number-3">2.2</span> Pins</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Every <i>part</i> (leaf or schematic) has
+</p>
+
+<p>
+a name (its <b>kind</b>)
+</p>
+
+<p>
+a set of input <b>pins</b>
+</p>
+
+<p>
+a set of output <b>pins</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgac3926a" class="outline-3">
+<h3 id="orgac3926a"><span class="section-number-3">2.3</span> Queues</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Every <i>part</i> has one input queue and one output queue.  All <i>events</i> are pushed onto the same (single)
+queue.  Each <i>event</i> has a <i>pin</i>, which allows the <i>part</i> to differentiate between <i>events</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc4ab808" class="outline-3">
+<h3 id="orgc4ab808"><span class="section-number-3">2.4</span> Events</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<i>Events</i> are sent as messages.
+</p>
+
+<p>
+<i>Events</i> are 2-tuples - <b>pin</b> and <b>data</b>.  (A <b>pin</b> can be thought of as an action tag - it is just a string; <b>data</b> can be anything supported
+by JSON)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd313b53" class="outline-3">
+<h3 id="orgd313b53"><span class="section-number-3">2.5</span> Send</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+<i>Parts</i> cannot communicate directly with their siblings.  <i>Parts</i> can <b>Send()</b> messages upwards to their enclosing <i>schematic</i> and
+the <i>schematic</i> routes the messages as it wishes, e.g. by connecting outputs of <i>parts</i> to inputs of <i>parts</i> via <i>wires</i>.
+</p>
+
+<p>
+Schematics own a set of <i>parts</i> and a set of <i>wires</i>.  <i>Parts</i> are instantiated in schematics, e.g. one <i>part</i> can be used multiple times in
+the same parent, and, the same part can appead in multiple schematics.
+</p>
+
+<p>
+Schematics can <i>wire</i>-up only the <i>parts</i> that it directly contains and itself.
+</p>
+
+<p>
+Schematics have input <i>pins</i> and output <i>pins</i>, just like any <i>part</i>.
+</p>
+
+<p>
+Schematics can route their own inputs to children <i>parts</i>.
+</p>
+
+<p>
+Schematics can route children <i>part</i> outputs to their own outputs.
+</p>
+
+<p>
+Schematics can route their inputs directly to their own outputs.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9a07a1e" class="outline-2">
+<h2 id="org9a07a1e"><span class="section-number-2">3</span> SCL</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<b>SCL</b> means Solution Centric Language.
+</p>
+
+<p>
+*SCL*s are like *DSL*s, except more focussed.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7225855" class="outline-2">
+<h2 id="org7225855"><span class="section-number-2">4</span> Transpiler</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+I wrote a transpiler that converts .scl code to Lisp and to JavaScript.
+</p>
+
+<p>
+I used <b>Scanner</b> technology to read in characters from the pseudo-code and turn them into tokens.
+</p>
+
+<p>
+I used <b>PASM</b> technology to "parse" runs of tokens and to emit Lisp JavaScript.
+</p>
+
+<p>
+I built <b>Scanner</b> and <b>PASM</b>.  The code is in my github.  <b>Scanner</b> and <b>PASM</b> are based on lessons I've learned using <b>S/SL</b> (Holt, Cordy, et al).
+I could have used PEG-like technlogies (e.g. ESRAP in Common Lisp and Ohm-JS in JavaScript) to build the transpiler, but I didn't.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1de1f02" class="outline-2">
+<h2 id="org1de1f02"><span class="section-number-2">5</span> syntax overview for pseudo-code SCL</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 type id
 </p>
@@ -352,13 +512,13 @@ call method
 </div>
 
 
-<div id="outline-container-org598d9f5" class="outline-2">
-<h2 id="org598d9f5"><span class="section-number-2">2</span> details</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org75e7eac" class="outline-2">
+<h2 id="org75e7eac"><span class="section-number-2">6</span> details</h2>
+<div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org31df4a8" class="outline-3">
-<h3 id="org31df4a8"><span class="section-number-3">2.1</span> type id</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org979a1e1" class="outline-3">
+<h3 id="org979a1e1"><span class="section-number-3">6.1</span> type id</h3>
+<div class="outline-text-3" id="text-6-1">
 <p>
 defines a handle for type
 </p>
@@ -368,25 +528,37 @@ builtin keywords true and false
 </p>
 </div>
 </div>
-<div id="outline-container-orgb8d0d11" class="outline-3">
-<h3 id="orgb8d0d11"><span class="section-number-3">2.2</span> self</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-org3bd88d1" class="outline-3">
+<h3 id="org3bd88d1"><span class="section-number-3">6.2</span> self</h3>
+<div class="outline-text-3" id="text-6-2">
 <p>
 can be a part-name in which case it is a keyword
 </p>
 </div>
 </div>
-<div id="outline-container-org89270dc" class="outline-3">
-<h3 id="org89270dc"><span class="section-number-3">2.3</span> situation id</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-org8bfdc3a" class="outline-3">
+<h3 id="org8bfdc3a"><span class="section-number-3">6.3</span> situation id</h3>
+<div class="outline-text-3" id="text-6-3">
 <p>
 defines time/phase during which methods and scripts apply
 </p>
+
+<p>
+Situations are kinda like compile-time vs. run-time.  
+</p>
+
+<p>
+I chop up this architecture into 4 main phases - build, load, initialize and run.
+</p>
+
+<p>
+I created an extra dummy phase called <i>building-aux</i> to reduce the cognitive load and noise in the <i>building</i> phase.
+</p>
 </div>
 </div>
-<div id="outline-container-orgc721bc5" class="outline-3">
-<h3 id="orgc721bc5"><span class="section-number-3">2.4</span> kind id &#x2026; end kind</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-org0e38f30" class="outline-3">
+<h3 id="org0e38f30"><span class="section-number-3">6.4</span> kind id &#x2026; end kind</h3>
+<div class="outline-text-3" id="text-6-4">
 <p>
 defines field names for a "class"
 </p>
@@ -404,17 +576,17 @@ can contain a symbol, or 'map symbol'
 </p>
 </div>
 </div>
-<div id="outline-container-org6d62347" class="outline-3">
-<h3 id="org6d62347"><span class="section-number-3">2.5</span> when situation kind &#x2026; end when</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-orgfbf38de" class="outline-3">
+<h3 id="orgfbf38de"><span class="section-number-3">6.5</span> when situation kind &#x2026; end when</h3>
+<div class="outline-text-3" id="text-6-5">
 <p>
 describe methods and scripts allowed for kind during phase denoted by situation
 </p>
 </div>
 </div>
-<div id="outline-container-orgafa1a03" class="outline-3">
-<h3 id="orgafa1a03"><span class="section-number-3">2.6</span> method id [( kinds )] [&gt;&gt; return-kind]</h3>
-<div class="outline-text-3" id="text-2-6">
+<div id="outline-container-org2cea21c" class="outline-3">
+<h3 id="org2cea21c"><span class="section-number-3">6.6</span> method id [( kinds )] [&gt;&gt; return-kind]</h3>
+<div class="outline-text-3" id="text-6-6">
 <p>
 method declaration
 </p>
@@ -440,18 +612,18 @@ optional: return kind can be given after &gt;&gt;, kind can be given as 'map kin
 </p>
 </div>
 </div>
-<div id="outline-container-orga4880c6" class="outline-3">
-<h3 id="orga4880c6"><span class="section-number-3">2.7</span> script id [( kinds )] [&gt;&gt; return-kind]</h3>
-<div class="outline-text-3" id="text-2-7">
+<div id="outline-container-orgc5bb7d7" class="outline-3">
+<h3 id="orgc5bb7d7"><span class="section-number-3">6.7</span> script id [( kinds )] [&gt;&gt; return-kind]</h3>
+<div class="outline-text-3" id="text-6-7">
 <p>
 script declaration
 same as method (above), except that the script must be specified in a script definition (below)
 </p>
 </div>
 </div>
-<div id="outline-container-orgf2bf5b9" class="outline-3">
-<h3 id="orgf2bf5b9"><span class="section-number-3">2.8</span> script kind-id id [( names )] [&gt;&gt; return-kind]</h3>
-<div class="outline-text-3" id="text-2-8">
+<div id="outline-container-orgbb62cbc" class="outline-3">
+<h3 id="orgbb62cbc"><span class="section-number-3">6.8</span> script kind-id id [( names )] [&gt;&gt; return-kind]</h3>
+<div class="outline-text-3" id="text-6-8">
 <p>
 script definition
 </p>
@@ -469,9 +641,9 @@ optional: return-kind can be specified and must match script declaration (in whe
 </p>
 </div>
 </div>
-<div id="outline-container-org241f2f5" class="outline-3">
-<h3 id="org241f2f5"><span class="section-number-3">2.9</span> statements</h3>
-<div class="outline-text-3" id="text-2-9">
+<div id="outline-container-orgc48808e" class="outline-3">
+<h3 id="orgc48808e"><span class="section-number-3">6.9</span> statements</h3>
+<div class="outline-text-3" id="text-6-9">
 <p>
 let &#x2026; in &#x2026; end let
 </p>
@@ -513,9 +685,9 @@ call method
 </p>
 </div>
 </div>
-<div id="outline-container-org0891030" class="outline-3">
-<h3 id="org0891030"><span class="section-number-3">2.10</span> expressions</h3>
-<div class="outline-text-3" id="text-2-10">
+<div id="outline-container-orgff03f46" class="outline-3">
+<h3 id="orgff03f46"><span class="section-number-3">6.10</span> expressions</h3>
+<div class="outline-text-3" id="text-6-10">
 <p>
 [@] symbol [. symbol]** [( expression expression &#x2026; )]**
 </p>
@@ -525,9 +697,9 @@ actuals are space-separated (not comma-separated as in most languages)
 </p>
 </div>
 </div>
-<div id="outline-container-orgf5f9062" class="outline-3">
-<h3 id="orgf5f9062"><span class="section-number-3">2.11</span> symbols</h3>
-<div class="outline-text-3" id="text-2-11">
+<div id="outline-container-org5f65e07" class="outline-3">
+<h3 id="org5f65e07"><span class="section-number-3">6.11</span> symbols</h3>
+<div class="outline-text-3" id="text-6-11">
 <p>
 first char must be a-zA-Z 
 </p>
@@ -541,9 +713,9 @@ final char can be a following char or ? or '
 </p>
 </div>
 </div>
-<div id="outline-container-orgdfabd9e" class="outline-3">
-<h3 id="orgdfabd9e"><span class="section-number-3">2.12</span> comment</h3>
-<div class="outline-text-3" id="text-2-12">
+<div id="outline-container-org9f1cbaf" class="outline-3">
+<h3 id="org9f1cbaf"><span class="section-number-3">6.12</span> comment</h3>
+<div class="outline-text-3" id="text-6-12">
 <p>
 % to end of line
 </p>
@@ -553,7 +725,7 @@ final char can be a following char or ? or '
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Paul Tarvydas</p>
-<p class="date">Created: 2020-12-17 Thu 15:30</p>
+<p class="date">Created: 2020-12-17 Thu 16:31</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

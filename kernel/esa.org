@@ -1,4 +1,67 @@
-* syntax overview
+* Kernel is also called ESA
+  ESA stands for Encapsulated Software Assets
+
+  The kernel is written in pseudo-code, then transpiled to Common Lisp and JavaScript.
+
+* Overview
+  An overview of Arrowgrams /parts/ is needed to understand the intention of the Kernel.
+** Isolation
+  (As of Dec. 2020, I prefer the word "isolated" instead of "encapsulated")
+
+  The idea of isolation is that *nothing* leaks out - data, nor control-flow - and the *only* communication is messages via *Send()*.
+
+** Pins
+  Every /part/ (leaf or schematic) has
+
+  a name (its *kind*)
+
+  a set of input *pins*
+
+  a set of output *pins*
+
+** Queues
+  Every /part/ has one input queue and one output queue.  All /events/ are pushed onto the same (single)
+  queue.  Each /event/ has a /pin/, which allows the /part/ to differentiate between /events/.
+** Events
+  /Events/ are sent as messages.
+
+  /Events/ are 2-tuples - *pin* and *data*.  (A *pin* can be thought of as an action tag - it is just a string; *data* can be anything supported
+  by JSON)
+
+** Send
+
+  /Parts/ cannot communicate directly with their siblings.  /Parts/ can *Send()* messages upwards to their enclosing /schematic/ and
+  the /schematic/ routes the messages as it wishes, e.g. by connecting outputs of /parts/ to inputs of /parts/ via /wires/.
+
+  Schematics own a set of /parts/ and a set of /wires/.  /Parts/ are instantiated in schematics, e.g. one /part/ can be used multiple times in
+  the same parent, and, the same part can appead in multiple schematics.
+
+  Schematics can /wire/-up only the /parts/ that it directly contains and itself.
+
+  Schematics have input /pins/ and output /pins/, just like any /part/.
+
+  Schematics can route their own inputs to children /parts/.
+
+  Schematics can route children /part/ outputs to their own outputs.
+
+  Schematics can route their inputs directly to their own outputs.
+
+* SCL
+  *SCL* means Solution Centric Language.
+
+  *SCL*s are like *DSL*s, except more focussed.
+
+* Transpiler
+  I wrote a transpiler that converts .scl code to Lisp and to JavaScript.
+  
+  I used *Scanner* technology to read in characters from the pseudo-code and turn them into tokens.
+
+  I used *PASM* technology to "parse" runs of tokens and to emit Lisp JavaScript.
+
+  I built *Scanner* and *PASM*.  The code is in my github.  *Scanner* and *PASM* are based on lessons I've learned using *S/SL* (Holt, Cordy, et al).
+  I could have used PEG-like technlogies (e.g. ESRAP in Common Lisp and Ohm-JS in JavaScript) to build the transpiler, but I didn't.
+
+* syntax overview for pseudo-code SCL
 
   type id
 
@@ -50,6 +113,12 @@ builtin keywords true and false
 can be a part-name in which case it is a keyword
 ** situation id
 defines time/phase during which methods and scripts apply
+
+Situations are kinda like compile-time vs. run-time.  
+
+I chop up this architecture into 4 main phases - build, load, initialize and run.
+
+I created an extra dummy phase called /building-aux/ to reduce the cognitive load and noise in the /building/ phase.
 ** kind id ... end kind
 defines field names for a "class"
 
