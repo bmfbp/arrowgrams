@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Identifier="165BCA29-DCDA-4E65-BC17-3755887AD5A3" Version="2.0" Creator="SCRMAC-3.2.1-14482" Device="Pauls-MacBook-Pro-279" Author="" Modified="2020-12-16 23:55:02 -0500" ModID="A5097217-640A-49D7-98B9-5FA830FCD8B4">
+<ScrivenerProject Identifier="165BCA29-DCDA-4E65-BC17-3755887AD5A3" Version="2.0" Creator="SCRMAC-3.2.1-14482" Device="Pauls-MacBook-Pro-279" Author="" Modified="2020-12-17 17:05:17 -0500" ModID="15A240D4-6305-4089-9D0D-92E636FC687A">
     <Binder>
         <BinderItem UUID="957D7114-6346-4F8C-8508-DC4A9F2A26A8" Type="DraftFolder" Created="2020-12-16 18:55:51 -0500" Modified="2020-12-16 18:55:51 -0500">
             <Title>Draft</Title>
@@ -25,7 +25,7 @@
                         <IncludeInCompile>Yes</IncludeInCompile>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>56,0</TextSelection>
+                        <TextSelection>104,0</TextSelection>
                     </TextSettings>
                     <Children>
                         <BinderItem UUID="4BACEC24-BB26-4A85-854B-9DC98CB77D3F" Type="Text" Created="2020-12-16 19:15:46 -0500" Modified="2020-12-16 19:15:50 -0500">
@@ -168,12 +168,12 @@
     </StatusSettings>
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2020-12-16 18:55:47 -0500" IgnoreDeadline="Yes">0</DraftTarget>
-        <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" NextResetDate="2020-12-17 00:00:00 -0500" ResetType="Time" ResetTime="00:00" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
-        <PreviousSession Words="283" Characters="1584" Date="2020-12-16 23:53:50 -0500"/>
+        <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" NextResetDate="2020-12-18 00:00:00 -0500" ResetType="Time" ResetTime="00:00" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
+        <PreviousSession Words="0" Characters="0" Date="2020-12-17 17:05:15 -0500"/>
     </ProjectTargets>
-    <RecentWritingHistory Date="2020-12-16 18:55:47 -0500">
-        <DraftWordCount>283</DraftWordCount>
-        <DraftCharCount>1584</DraftCharCount>
+    <RecentWritingHistory Date="2020-12-17 00:00:00 -0500">
+        <DraftWordCount>0</DraftWordCount>
+        <DraftCharCount>0</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>

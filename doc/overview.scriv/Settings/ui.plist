@@ -2,12 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CompileFolder</key>
+	<string>/Users/tarvydas/quicklisp/local-projects/arrowgrams/doc</string>
 	<key>NotesScaleFactor</key>
 	<real>1</real>
 	<key>binderSplitFrames</key>
 	<array>
-		<string>{{0, 0}, {265, 650}}</string>
-		<string>{{266, 0}, {1082, 650}}</string>
+		<string>{{0, 0}, {265, 901}}</string>
+		<string>{{266, 0}, {1014, 901}}</string>
 	</array>
 	<key>bookmarksSelectionInfo</key>
 	<dict>
@@ -66,7 +68,7 @@
 	</dict>
 	<key>inspectorSplitFrames</key>
 	<array>
-		<string>{{0, 0}, {288, 640}}</string>
+		<string>{{0, 0}, {384, 640}}</string>
 	</array>
 	<key>inspectorWidth</key>
 	<real>245</real>
@@ -75,18 +77,22 @@
 		<key>textScaleFactor</key>
 		<real>1</real>
 	</dict>
+	<key>mainDocumentEditor.scrollRect</key>
+	<string>{{0, 0}, {570.85714285714289, 447.42857142857144}}</string>
 	<key>mainDocumentEditor.textEditorState</key>
 	<dict>
 		<key>textScaleFactor</key>
 		<real>1.75</real>
 	</dict>
 	<key>mainWindowFrame</key>
-	<string>0 206 1348 672 0 0 1440 878 </string>
+	<string>407 93 1280 923 -3000 -12 1920 1057 </string>
 	<key>supportingDocumentEditor.dockedQRTextSettings</key>
 	<dict>
 		<key>textScaleFactor</key>
 		<real>1</real>
 	</dict>
+	<key>supportingDocumentEditor.scrollRect</key>
+	<string>{{0, 0}, {606, 294}}</string>
 	<key>supportingDocumentEditor.textEditorState</key>
 	<dict>
 		<key>textScaleFactor</key>
