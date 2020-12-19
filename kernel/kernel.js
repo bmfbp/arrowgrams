@@ -8,7 +8,7 @@ function part_definition () {
     this.part_kind = function () { return attribute_part_kind; },
     this.set_part_kind = function (val) { this.attribute_part_kind = val; }
 }
-// external method ((self part-definition)) ensure_kind_defined
+// external function ensure_kind_defined ((self part_definition))
 
 function named_part_instance () {
     this.attribute_instance_name = null,
@@ -36,7 +36,7 @@ function source () {
     this.pin_name = function () { return attribute_pin_name; },
     this.set_pin_name = function (val) { this.attribute_pin_name = val; }
 }
-// external method ((self source)) refers_to_selfQ
+// external function refers_to_selfQ ((self source))
 
 function destination () {
     this.attribute_part_name = null,
@@ -46,7 +46,7 @@ function destination () {
     this.pin_name = function () { return attribute_pin_name; },
     this.set_pin_name = function (val) { this.attribute_pin_name = val; }
 }
-// external method ((self destination)) refers_to_selfQ
+// external function refers_to_selfQ ((self destination))
 
 function wire () {
     this.attribute_index = null,
@@ -59,8 +59,8 @@ function wire () {
     this.destinations = function () { return attribute_destinations; },
     this.set_destinations = function (val) { this.attribute_destinations = val; }
 }
-// external method ((self wire)) install_source
-// external method ((self wire)) install_destination
+// external function install_source ((self wire), (? name), (? name))
+// external function install_destination ((self wire), (? name), (? name))
 function add_source (self, part, pin) {
     self.install_source (part, pin);
 };
@@ -88,8 +88,8 @@ function kind () {
     this.wires = function () { return attribute_wires; },
     this.set_wires = function (val) { this.attribute_wires = val; }
 }
-// external method ((self kind)) install_input_pin
-// external method ((self kind)) install_output_pin
+// external function install_input_pin ((self kind), (? name))
+// external function install_output_pin ((self kind), (? name))
 function add_input_pin (self, name) {
     self.ensure_input_pin_not_declared (name);
     self.install_input_pin (name);
@@ -115,15 +115,15 @@ function add_wire (self, w) {
     }) ();
     self.install_wire (w);
 };
-// external method ((self kind)) install_wire
-// external method ((self kind)) install_part
-// external method ((self kind)) parts
-// external method ((self kind)) install_class
-// external method ((self kind)) ensure_part_not_declared
-// external method ((self kind)) ensure_valid_input_pin
-// external method ((self kind)) ensure_valid_output_pin
-// external method ((self kind)) ensure_input_pin_not_declared
-// external method ((self kind)) ensure_output_pin_not_declared
+// external function install_wire ((self kind), (? wire))
+// external function install_part ((self kind), (? name), (? kind), (? node_class))
+// external function parts ((self kind))
+// external function install_class ((self kind), (? node_class))
+// external function ensure_part_not_declared ((self kind), (? name))
+// external function ensure_valid_input_pin ((self kind), (? name))
+// external function ensure_valid_output_pin ((self kind), (? name))
+// external function ensure_input_pin_not_declared ((self kind), (? name))
+// external function ensure_output_pin_not_declared ((self kind), (? name))
 function ensure_valid_source (self, s) {
     if (s.refers_to_selfQ ()) {
 	self.ensure_valid_input_pin (s.pin_name ());
@@ -168,8 +168,8 @@ function loader (self, my_name, my_container, dispatchr) {
 
     } /* end let */
 };
-// external method ((self kind)) find_wire_for_source
-// external method ((self kind)) find_wire_for_self_source
+// external function find_wire_for_source ((self kind), (? name), (? name))
+// external function find_wire_for_self_source ((self kind), (? name))
 
 function node () {
     this.attribute_input_queue = null,
@@ -194,17 +194,17 @@ function node () {
     this.busy_flag = function () { return attribute_busy_flag; },
     this.set_busy_flag = function (val) { this.attribute_busy_flag = val; }
 }
-// external method ((self node)) clear_input_queue
-// external method ((self node)) clear_output_queue
-// external method ((self node)) install_node
+// external function clear_input_queue ((self node))
+// external function clear_output_queue ((self node))
+// external function install_node ((self node), (? node))
 function add_child (self, nm, nd) {
     self.install_child (nm, nd);
 };
 function initialize (self) {
     self.initially ();
 };
-// external method ((self node)) initially
-// external method ((self node)) send
+// external function initially ((self node))
+// external function send ((self node), (? event))
 function distribute_output_events (self) {
     if (self.has_no_containerQ ()) {
 	self.display_output_events_to_console_and_delete ();
@@ -252,9 +252,9 @@ function distribute_output_events (self) {
 	} /* end let */
     }
 };
-// external method ((self node)) display_output_events_to_console_and_delete
-// external method ((self node)) get_output_events_and_delete
-// external method ((self node)) has_no_containerQ
+// external function display_output_events_to_console_and_delete ((self node))
+// external function get_output_events_and_delete ((self node))
+// external function has_no_containerQ ((self node))
 function distribute_outputs_upwards (self) {
     if (self.has_no_containerQ ()) {
     } else {
@@ -304,14 +304,14 @@ function invoke (self) {
 	self.distribute_output_events ();
     } /* end let */
 };
-// external method ((self node)) has_inputs_or_outputsQ
-// external method ((self node)) childrenQ
-// external method ((self node)) flagged_as_busyQ
-// external method ((self node)) dequeue_input
-// external method ((self node)) input_queueQ
-// external method ((self node)) enqueue_input
-// external method ((self node)) enqueue_output
-// external method ((self node)) react
+// external function has_inputs_or_outputsQ ((self node))
+// external function childrenQ ((self node))
+// external function flagged_as_busyQ ((self node))
+// external function dequeue_input ((self node))
+// external function input_queueQ ((self node))
+// external function enqueue_input ((self node), (? event))
+// external function enqueue_output ((self node), (? event))
+// external function react ((self node), (? event))
 function run_reaction (self, e) {
     self.react (e);
 };
@@ -352,7 +352,7 @@ function run_composite_reaction (self, e) {
 	}) ();
     } /* end let */
 };
-// external method ((self node)) node_find_child
+// external function node_find_child ((self node), (? name))
 
 function dispatcher () {
     this.attribute_all_parts = null,
@@ -362,8 +362,8 @@ function dispatcher () {
     this.top_node = function () { return attribute_top_node; },
     this.set_top_node = function (val) { this.attribute_top_node = val; }
 }
-// external method ((self dispatcher)) memo_node
-// external method ((self dispatcher)) set_top_node
+// external function memo_node ((self dispatcher), (? node))
+// external function set_top_node ((self dispatcher), (? node))
 function initialize_all (self) {
     (function () {
 	for (const part in self.all_parts ()) {
@@ -406,7 +406,7 @@ function dispatcher_inject (self, pin, val) {
 	self.dispatcher_run ();
     } /* end let */
 };
-// external method ((self dispatcher)) create_top_event
+// external function create_top_event ((self dispatcher), (? name), (? value))
 
 function event () {
     this.attribute_partpin = null,
