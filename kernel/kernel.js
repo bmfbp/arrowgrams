@@ -1,50 +1,63 @@
 // esa.js
 
 function part_definition () {
-    this.attribute_part_name = null;
-    this.part_name = function () { return attribute_part_name; };
-    this.attribute_part_kind = null;
-    this.part_kind = function () { return attribute_part_kind; };
+    this.attribute_part_name = null,
+    this.part_name = function () { return attribute_part_name; },
+    this.set_part_name = function (val) { this.attribute_part_name = val; },
+    this.attribute_part_kind = null,
+    this.part_kind = function () { return attribute_part_kind; },
+    this.set_part_kind = function (val) { this.attribute_part_kind = val; }
 }
 // external method ((self part-definition)) ensure_kind_defined
 
 function named_part_instance () {
-    this.attribute_instance_name = null;
-    this.instance_name = function () { return attribute_instance_name; };
-    this.attribute_instance_node = null;
-    this.instance_node = function () { return attribute_instance_node; };
+    this.attribute_instance_name = null,
+    this.instance_name = function () { return attribute_instance_name; },
+    this.set_instance_name = function (val) { this.attribute_instance_name = val; },
+    this.attribute_instance_node = null,
+    this.instance_node = function () { return attribute_instance_node; },
+    this.set_instance_node = function (val) { this.attribute_instance_node = val; }
 }
 
 function part_pin () {
-    this.attribute_part_name = null;
-    this.part_name = function () { return attribute_part_name; };
-    this.attribute_pin_name = null;
-    this.pin_name = function () { return attribute_pin_name; };
+    this.attribute_part_name = null,
+    this.part_name = function () { return attribute_part_name; },
+    this.set_part_name = function (val) { this.attribute_part_name = val; },
+    this.attribute_pin_name = null,
+    this.pin_name = function () { return attribute_pin_name; },
+    this.set_pin_name = function (val) { this.attribute_pin_name = val; }
 }
 
 function source () {
-    this.attribute_part_name = null;
-    this.part_name = function () { return attribute_part_name; };
-    this.attribute_pin_name = null;
-    this.pin_name = function () { return attribute_pin_name; };
+    this.attribute_part_name = null,
+    this.part_name = function () { return attribute_part_name; },
+    this.set_part_name = function (val) { this.attribute_part_name = val; },
+    this.attribute_pin_name = null,
+    this.pin_name = function () { return attribute_pin_name; },
+    this.set_pin_name = function (val) { this.attribute_pin_name = val; }
 }
 // external method ((self source)) refers_to_selfQ
 
 function destination () {
-    this.attribute_part_name = null;
-    this.part_name = function () { return attribute_part_name; };
-    this.attribute_pin_name = null;
-    this.pin_name = function () { return attribute_pin_name; };
+    this.attribute_part_name = null,
+    this.part_name = function () { return attribute_part_name; },
+    this.set_part_name = function (val) { this.attribute_part_name = val; },
+    this.attribute_pin_name = null,
+    this.pin_name = function () { return attribute_pin_name; },
+    this.set_pin_name = function (val) { this.attribute_pin_name = val; }
 }
 // external method ((self destination)) refers_to_selfQ
 
 function wire () {
-    this.attribute_index = null;
-    this.index = function () { return attribute_index; };
-    this.attribute_sources = null;
-    this.sources = function () { return attribute_sources; };
-    this.attribute_destinations = null;
-    this.destinations = function () { return attribute_destinations; };
+    this.attribute_index = null,
+    this.index = function () { return attribute_index; },
+    this.set_index = function (val) { this.attribute_index = val; },
+    this.attribute_sources = null,
+    this.sources = function () { return attribute_sources; },
+    this.set_sources = function (val) { this.attribute_sources = val; },
+    this.attribute_destinations = null,
+    this.destinations = function () { return attribute_destinations; },
+    this.set_destinations = function (val) { this.attribute_destinations = val; }
 }
 // external method ((self wire)) install_source
 // external method ((self wire)) install_destination
@@ -56,18 +69,24 @@ function add_destination (self, part, pin) {
 };
 
 function kind () {
-    this.attribute_kind_name = null;
-    this.kind_name = function () { return attribute_kind_name; };
-    this.attribute_input_pins = null;
-    this.input_pins = function () { return attribute_input_pins; };
-    this.attribute_self_class = null;
-    this.self_class = function () { return attribute_self_class; };
-    this.attribute_output_pins = null;
-    this.output_pins = function () { return attribute_output_pins; };
-    this.attribute_parts = null;
-    this.parts = function () { return attribute_parts; };
-    this.attribute_wires = null;
-    this.wires = function () { return attribute_wires; };
+    this.attribute_kind_name = null,
+    this.kind_name = function () { return attribute_kind_name; },
+    this.set_kind_name = function (val) { this.attribute_kind_name = val; },
+    this.attribute_input_pins = null,
+    this.input_pins = function () { return attribute_input_pins; },
+    this.set_input_pins = function (val) { this.attribute_input_pins = val; },
+    this.attribute_self_class = null,
+    this.self_class = function () { return attribute_self_class; },
+    this.set_self_class = function (val) { this.attribute_self_class = val; },
+    this.attribute_output_pins = null,
+    this.output_pins = function () { return attribute_output_pins; },
+    this.set_output_pins = function (val) { this.attribute_output_pins = val; },
+    this.attribute_parts = null,
+    this.parts = function () { return attribute_parts; },
+    this.set_parts = function (val) { this.attribute_parts = val; },
+    this.attribute_wires = null,
+    this.wires = function () { return attribute_wires; },
+    this.set_wires = function (val) { this.attribute_wires = val; }
 }
 // external method ((self kind)) install_input_pin
 // external method ((self kind)) install_output_pin
@@ -153,20 +172,27 @@ function loader (self, my_name, my_container, dispatchr) {
 // external method ((self kind)) find_wire_for_self_source
 
 function node () {
-    this.attribute_input_queue = null;
-    this.input_queue = function () { return attribute_input_queue; };
-    this.attribute_output_queue = null;
-    this.output_queue = function () { return attribute_output_queue; };
-    this.attribute_kind_field = null;
-    this.kind_field = function () { return attribute_kind_field; };
-    this.attribute_container = null;
-    this.container = function () { return attribute_container; };
-    this.attribute_name_in_container = null;
-    this.name_in_container = function () { return attribute_name_in_container; };
-    this.attribute_children = null;
-    this.children = function () { return attribute_children; };
-    this.attribute_busy_flag = null;
-    this.busy_flag = function () { return attribute_busy_flag; };
+    this.attribute_input_queue = null,
+    this.input_queue = function () { return attribute_input_queue; },
+    this.set_input_queue = function (val) { this.attribute_input_queue = val; },
+    this.attribute_output_queue = null,
+    this.output_queue = function () { return attribute_output_queue; },
+    this.set_output_queue = function (val) { this.attribute_output_queue = val; },
+    this.attribute_kind_field = null,
+    this.kind_field = function () { return attribute_kind_field; },
+    this.set_kind_field = function (val) { this.attribute_kind_field = val; },
+    this.attribute_container = null,
+    this.container = function () { return attribute_container; },
+    this.set_container = function (val) { this.attribute_container = val; },
+    this.attribute_name_in_container = null,
+    this.name_in_container = function () { return attribute_name_in_container; },
+    this.set_name_in_container = function (val) { this.attribute_name_in_container = val; },
+    this.attribute_children = null,
+    this.children = function () { return attribute_children; },
+    this.set_children = function (val) { this.attribute_children = val; },
+    this.attribute_busy_flag = null,
+    this.busy_flag = function () { return attribute_busy_flag; },
+    this.set_busy_flag = function (val) { this.attribute_busy_flag = val; }
 }
 // external method ((self node)) clear_input_queue
 // external method ((self node)) clear_output_queue
@@ -329,10 +355,12 @@ function run_composite_reaction (self, e) {
 // external method ((self node)) node_find_child
 
 function dispatcher () {
-    this.attribute_all_parts = null;
-    this.all_parts = function () { return attribute_all_parts; };
-    this.attribute_top_node = null;
-    this.top_node = function () { return attribute_top_node; };
+    this.attribute_all_parts = null,
+    this.all_parts = function () { return attribute_all_parts; },
+    this.set_all_parts = function (val) { this.attribute_all_parts = val; },
+    this.attribute_top_node = null,
+    this.top_node = function () { return attribute_top_node; },
+    this.set_top_node = function (val) { this.attribute_top_node = val; }
 }
 // external method ((self dispatcher)) memo_node
 // external method ((self dispatcher)) set_top_node
@@ -381,8 +409,10 @@ function dispatcher_inject (self, pin, val) {
 // external method ((self dispatcher)) create_top_event
 
 function event () {
-    this.attribute_partpin = null;
-    this.partpin = function () { return attribute_partpin; };
-    this.attribute_data = null;
-    this.data = function () { return attribute_data; };
+    this.attribute_partpin = null,
+    this.partpin = function () { return attribute_partpin; },
+    this.set_partpin = function (val) { this.attribute_partpin = val; },
+    this.attribute_data = null,
+    this.data = function () { return attribute_data; },
+    this.set_data = function (val) { this.attribute_data = val; }
 }

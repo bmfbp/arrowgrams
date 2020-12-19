@@ -1,0 +1,16 @@
+function hello () {
+    this.initially = 
+	function () {
+	},
+    this.react =
+	function (e) {
+	    let new-event = new event ();
+	    let pp = new part_pin ();
+	    pp.set_part_name (this.name_in_container ());
+	    pp.set_pin_name ("s");
+	    e.set_partpin (pp);
+	    e.set_data ("Hello");
+	    kernel.send (this, e);
+	}
+}
+
