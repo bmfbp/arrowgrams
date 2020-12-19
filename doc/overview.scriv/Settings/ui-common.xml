@@ -100,7 +100,7 @@
                 <PageLayout Facing="No">No</PageLayout>
                 <TypewriterScrolling>No</TypewriterScrolling>
                 <LineNumbers Interval="1">No</LineNumbers>
-                <Selection>104,0</Selection>
+                <Selection>105,0</Selection>
             </Text>
             <Outliner>
                 <Columns>
