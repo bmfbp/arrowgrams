@@ -115,13 +115,13 @@ function ensure_valid_destination (self, destination) {
 };
 function loader (self, name, node, dispatcher) {
     { /*let*/
-	let clss = self.self_class ();
+	let clss = self.self_class;
 	{ let inst = new clss;
 	  inst.clear_input_queue ();
 	  inst.clear_output_queue ();
 	  inst.kind_field = self;
-	  inst.container = my-container;
-	  inst.name_in_container = my-name;
+	  inst.container = my_container;
+	  inst.name_in_container = my_name;
 	  (function () {
 	      for (const part in self.parts) {
 		  { /*let*/
@@ -343,13 +343,14 @@ function dispatcher_run (self) {
 	    if (done) {break;};
 	}
     } /* end let */
+    self.declare-finished ();
 };
-function dispatcher_inject (self) {
+function dispatcher_inject (self, pin, val) {
     { /*let*/
 	let e = self.create_top_event (pin, val);
 	self.top_node.enqueue_input (e);
 	self.dispatcher_run ();
-    } /* end let
+    } /* end let */
 };
 // external function create_top_event ((self dispatcher), (? name), (? value))
 

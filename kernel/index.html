@@ -3,6 +3,7 @@
   <script src="../parts/js/hello.js"> </script>
   <script src="../parts/js/world.js"> </script>
   <script src="../parts/js/string-join.js"> </script>
+  <script src="kernel.js"> </script>
   <script>
     function run () {
         sender ();
@@ -13,7 +14,7 @@
 
 <body>
     <div>
-        <input id="input" type="text" onchange="run()"></input>
+      <button onclick="run()"> RUN </button>
     </div>
     <div id="output"></div>
 </body>
