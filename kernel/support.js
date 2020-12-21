@@ -73,7 +73,7 @@ function install_part (self, name, kind, node_class) {
 }
 
 function kind_find_part (self, name) {
-    for p in self.parts {
+    for (p in self.parts) {
 	if (streq (p.part_name, name)) {
 	    return p;
 	}
@@ -82,7 +82,7 @@ function kind_find_part (self, name) {
 }
 
 function ensure_part_not_declared (self, name) {
-    for part in self.parts {
+    for (part in self.parts) {
 	if (streq (part.part_name, name)) {
 	    throw `${part.part_name} already declared in ${self.kind_name}`;
 	}
@@ -90,7 +90,7 @@ function ensure_part_not_declared (self, name) {
 }
 
 function ensure_valid_input_pin (self, name) {
-    for pin_name in self.input_pins {
+    for (pin_name in self.input_pins) {
 	if (streq (pin_name, name)) {
 	    return true;
 	}
@@ -99,7 +99,7 @@ function ensure_valid_input_pin (self, name) {
 }
 
 function ensure_valid_output_pin (self, name) {
-    for pin_name in self.output_pins {
+    for (pin_name in self.output_pins) {
 	if (streq (pin_name, name)) {
 	    return true;
 	}
@@ -108,7 +108,7 @@ function ensure_valid_output_pin (self, name) {
 }
 
 function ensure_input_pin_not_declared (self, name) {
-    for pin_name in self.input_pins {
+    for (pin_name in self.input_pins) {
 	if (streq (pin_name, name)) {
 	    throw `${name} already declared as an input pin in ${self.kind_name}`;
 	}
@@ -116,7 +116,7 @@ function ensure_input_pin_not_declared (self, name) {
     return true;
 }
 function ensure_output_pin_not_declared (self, name) {
-    for pin_name in self.output_pins {
+    for (pin_name in self.output_pins) {
 	if (streq (pin_name, name)) {
 	    throw `${name} already declared as an output pin in ${self.kind_name}`;
 	}
@@ -197,7 +197,7 @@ function clear_output_queue (self) {
 }
 
 function display_output_events_to_console_and_delete (self) {
-    for e in self.output_queue {
+    for (e in self.output_queue) {
 	console.log (e);
     }
 }
@@ -277,8 +277,8 @@ function find_wire_for_source (self, part_name, pin_name) {
     //              a list of destinations
     // (I think that, later, I made wires have a single source and (still)
     //  have multiple destinations)
-    for w in self.wires {
-	for s in w.sources {
+    for (w in self.wires) {
+	for (s in w.sources) {
 	    if ( (streq ("self", s.part-name)) || (streq (part_name, s.part_name))
 		 &&
 		 streq (s.pin_name, pin_name) ) {
@@ -295,7 +295,7 @@ function find_wire_for_self_source (self, pinname) {
 }
 
 function node_find_child (self, name) {
-    for p in self.children {
+    for (p in self.children) {
 	if (streq (name, p.instance_name)) {
 	    return p;
 	}
