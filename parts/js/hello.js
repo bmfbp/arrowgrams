@@ -3,14 +3,14 @@ function hello () {
 	function () {
 	},
     this.react =
-	function (e) {
-	    let new-event = new event ();
+	function (message) {
+	    let new_event = new event ();
 	    let pp = new part_pin ();
 	    pp.set_part_name (this.name_in_container ());
 	    pp.set_pin_name ("s");
-	    e.set_partpin (pp);
-	    e.set_data ("Hello");
-	    kernel.send (this, e);
+	    new_event.set_partpin (pp);
+	    new_event.set_data ("Hello");
+	    kernel.send (this, new_event);
 	}
 }
 

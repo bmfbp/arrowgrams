@@ -27,7 +27,7 @@ function string_join () {
 		    fail ();
 		}
 	    } else if (this.state === "waiting for b") {
-		} else if (e.pin () == "b") {
+		if (e.pin () == "b") {
 		    this.string_b = e.data;
 		    this.send_both ();
 		    this.state = "idle";
@@ -35,7 +35,7 @@ function string_join () {
 		    fail ();
 		}
 	    } else if (this.state === "waiting for a") {
-		} else if (e.pin () == "a") {
+		if (e.pin () == "a") {
 		    this.string_b = e.data;
 		    this.send_both ();
 		    this.state = "idle";
@@ -46,7 +46,7 @@ function string_join () {
 		fail ();
 	    }
 	},
-    this.send_both () {
+    this.send_both = function () {
 	kernel.send (this, "c", string_a + string_b);
 	kernel.next (this, "idle");
     }

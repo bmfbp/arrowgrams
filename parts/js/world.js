@@ -3,8 +3,8 @@ function world () {
 	function () {
 	},
     this.react =
-	function (e) {
-	    let new-event = new event ();
+	function (message) {
+	    let e = new event ();
 	    let pp = new part_pin ();
 	    pp.set_part_name (this.name_in_container ());
 	    pp.set_pin_name ("s");
