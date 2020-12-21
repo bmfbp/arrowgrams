@@ -8,16 +8,49 @@
   <script src="../parts/js/world.js"> </script>
   <script src="../parts/js/string-join.js"> </script>
 
-  <script>
-    function run () {
+
+  <script src="run.js"> </script>
+
+<script> 
+function display (text) {
+   document.getElementById ('output').textContent=text; 
+}
+ 
+function load_recursively (text) {
+display (text);
+    let top_schematic = ""
+    let obj = JSON.parse (text); 
+    for (item in obj) {
+console.log (item.name);
+	kindTable[item.name] = item;
+	if (item.itemKind === "graph") {
+	    // parts are emitted in reverse order
+	    // - top schematic is the last part emitted
+	    top_schematic = item.name;  // overwrite, leaving top-most schematic
+	}
     }
-  </script>
+    display (top_schematic);
+}
+</script>
+
 </head>
 
 <body>
-    <div>
-      <button onclick="run()"> RUN </button>
-    </div>
+   <input type="file" name="inputfile" id="inputfile"> 
+   <hr> 
+
+<script type="text/javascript">
+        document.getElementById('inputfile') 
+            .addEventListener('change', function () { 
+            var fr = new FileReader (); 
+            fr.onload = function (){ 
+                var text = fr.result;
+                load_recursively (text);
+            } 
+            fr.readAsText (this.files[0]); 
+        }) 
+</script>
+
     <div id="output"></div>
 </body>
 </html>

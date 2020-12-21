@@ -10,8 +10,9 @@ function load_schematic (filename) {
 	    if (item.itemKind === "graph") {
 		// parts are emitted in reverse order
 		// - top schematic is the last part emitted
-		top_schematic = item.name;  // overwrite, leaving top-most
+		top_schematic = item.name;  // overwrite, leaving top-most schematic
 	    }
 	}
     })
 }
+
