@@ -2,7 +2,11 @@
 
 function part_definition () {
     this.part_name = null,
-    this.part_kind = null
+    this.part_kind = null,
+    this.input_queue = []; //pt
+    this.output_queue = []; //pt
+    this.initially = function () {}, //pt
+    this.react = function (message) { throw `react not implemented for ${this}`; } //pt 
 }
 // external function ensure_kind_defined ((self part_definition))
 
@@ -345,7 +349,7 @@ function dispatcher_inject (self) {
 	let e = self.create_top_event (pin, val);
 	self.top_node.enqueue_input (e);
 	self.dispatcher_run ();
-    } /* end let */
+    } /* end let
 };
 // external function create_top_event ((self dispatcher), (? name), (? value))
 
