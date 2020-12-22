@@ -15,21 +15,24 @@
 function display (text) {
    document.getElementById ('output').textContent=text; 
 }
- 
+
+var top_schematic = "";
+
 function load_recursively (text) {
 display (text);
-    let top_schematic = ""
+    let top_schem = ""
     let obj = JSON.parse (text); 
-    for (item in obj) {
+    obj.forEach ( item => {
 console.log (item.name);
 	kindTable[item.name] = item;
 	if (item.itemKind === "graph") {
 	    // parts are emitted in reverse order
 	    // - top schematic is the last part emitted
-	    top_schematic = item.name;  // overwrite, leaving top-most schematic
+	    top_schem = item.name;  // overwrite, leaving top-most schematic
 	}
-    }
-    display (top_schematic);
+    });
+    display ("TOP = " + top_schem);
+    top_schematic = top_schem;
 }
 </script>
 
@@ -46,6 +49,9 @@ console.log (item.name);
             fr.onload = function (){ 
                 var text = fr.result;
                 load_recursively (text);
+console.log ('running : ' + top_schematic); 
+console.log ('kindTable : ' + kindTable[top_schematic]); 
+                kindTable[top_schematic] ();
             } 
             fr.readAsText (this.files[0]); 
         }) 
