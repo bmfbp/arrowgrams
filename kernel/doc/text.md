@@ -5,7 +5,7 @@ defpart TOP {
   wires:
     ${0}: ${self}.start -> ${box1}.start, ${box2}.start
     ${1}: ${box1}.s -> ${box3}.a
-    ${2}: ${box2}.s -> ${box2}.b
+    ${2}: ${box2}.s -> ${box3}.b
     ${3}: ${box3}.c -> ${self}.result
 }
 
