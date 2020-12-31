@@ -1,0 +1,9 @@
+* load-and-run
+** ~/quicklisp/local-projects/bmfbp/build_process/cl-run/load-and-run.lisp
+*** ~/quicklisp/local-projects/bmfbp/build_process/cl-run/make-kind-from-graph.lisp
+**** process-array-of-alists
+     leaf -->  (process-leaf self alist)
+     graph --> (process-graph self alist)
+
+**** replace-with
+     
